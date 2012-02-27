@@ -29,7 +29,7 @@ module Backup
         process_data[:stderr]            = stderr.read
         process_data[:ignore_exit_codes] = ((options[:ignore_exit_codes] || Array.new) << 0).uniq
 
-        raise_if_command_failed!(command_name(command), process_data)
+        raise_if_command_failed!(command, process_data)
         process_data[:stdout]
       end
 
